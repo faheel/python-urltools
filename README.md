@@ -20,10 +20,10 @@ Rules that are applied to normalize a URL:
 * tolower scheme
 * tolower host (also works with IDNs)
 * remove default port
-* remove ':' without port
+* remove `:` without port
 * remove DNS root label
 * unquote path, query, fragment
-* collapse path (remove '//', '/./', '/../')
+* collapse path (remove `//`, `/./`, `/../`)
 * sort query params and remove params without value
 
 `normalize` uses the functions for splitting and normalization which are
@@ -69,8 +69,8 @@ to manipulate segments of a URL or create new URLs.
 
 * `construct` a new URL from parts
 
-        >>> construct(URL('http', '', '', '', 'example', 'com', '/abc', 'x=1',
-        ... 'foo', None))
+        >>> construct(URL('http', '', '', '', 'example', 'com', '',
+        ... '/abc', 'x=1', 'foo', None))
         'http://example.com/abc?x=1#foo'
 
 * `compare` two urls to check if they are the same
